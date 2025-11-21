@@ -1,0 +1,35 @@
+#include <iostream>
+#include<string>
+using namespace std;
+
+void leertexto(string &texto);
+void mostrar(const string & original, const string & mayuscula);
+string convertirenMayuscula(const string & texto);
+
+
+int main(){
+string texto;
+string textoMayus;
+leertexto(texto);
+textoMayus=convertirenMayuscula(texto);
+mostrar(texto,textoMayus);
+
+return 0;
+}
+
+void leertexto(string &texto){
+cout<<"ingrese un texto: "<<endl;
+getline(cin,texto);
+cout<<"Tu texto ingresado es: "<<texto<<endl;
+}
+string convertirenMayuscula(cont string&texto){
+    string resultado=taxteo;
+for (size_t i=0; i<resultado.size();i++){ //size_t para que pueda saber el tamaño del texto
+    resultado[i]=toupper(resultado[i]);
+}
+return resultado;
+}
+
+void mostrar(const string & original, const string & mayuscula){
+cout<< "Texto original"
+}
