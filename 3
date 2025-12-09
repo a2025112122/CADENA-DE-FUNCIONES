@@ -1,0 +1,36 @@
+//primera letra de cada palabra mayuscula 
+#include <iostream>
+#include <string>
+using namespace std;
+
+void leerTexto(string &texto) {
+    cout << "Introduce un texto: ";
+    getline(cin, texto);
+}
+
+string cambiarprimletra(const string &texto) {
+    bool enPalabra = false;
+    string nuevotexto=texto;
+    for (size_t i = 0; i < texto.length(); ++i) {
+        if (nuevotexto[i] != ' ' && !enPalabra) {
+            enPalabra = true;
+            nuevotexto[i]=toupper (nuevotexto[i]);
+        } else if (texto[i] == ' ') {
+            enPalabra = false;
+        }
+    }
+
+    return nuevotexto;
+}
+
+void mostrarTexto(string & nuevo) {
+    cout <<"el texto nuevo texto con mayus en la primera letra de cada palabra es:  "<<nuevo<<endl;
+}
+
+int main() {
+    string texto;
+    leerTexto(texto);
+    string newtexto = cambiarprimletra(texto);
+    mostrarTexto(newtexto);
+    return 0;
+}
