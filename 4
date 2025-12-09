@@ -1,0 +1,41 @@
+// invertir 
+#include <iostream>
+#include <string>
+using namespace std;
+
+template <typename T>
+void intercambio(T &a,T &b){
+    T temporal= a;
+    a= b;
+    b= temporal;
+}
+
+void leerTexto(string &text) {
+    cout << "Introduce un texto: ";
+    getline(cin, text);
+}
+
+string invertir(string &texto) {
+    int i=0;
+    int j=texto.size()-1;
+    while(i<j){
+        intercambio(texto[i],texto[j]);
+        i++;
+        j--;
+    }
+    return texto;
+}
+
+void mostrarTexto(string & inv) {
+    cout <<"el texto invertido es:  "<<inv<<endl;
+}
+
+
+
+int main() {
+    string texto;
+    leerTexto(texto);
+    string invertido=invertir(texto);
+    mostrarTexto(invertido);
+    return 0;
+}
